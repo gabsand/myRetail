@@ -7,7 +7,6 @@ describe('Component: MainComponent', function() {
 
   beforeEach(angular.mock.module(main));
 
-
   var scope;
   var mainComponent;
   var $httpBackend;
@@ -19,8 +18,8 @@ describe('Component: MainComponent', function() {
     $componentController,
     $rootScope) {
       $httpBackend = _$httpBackend_;
-      $httpBackend.expectGET('/api/things')
-        .respond(['HTML5 Boilerplate', 'AngularJS', 'Karma', 'Express']);
+      $httpBackend.expectGET('/api/products')
+        .respond(['Product One','Product Two', 'Product Red', 'Product Blue']);
 
       scope = $rootScope.$new();
       mainComponent = $componentController('main', {
@@ -29,9 +28,16 @@ describe('Component: MainComponent', function() {
       });
   }));
 
-  it('should attach a list of things to the controller', function() {
-    mainComponent.$onInit();
-    $httpBackend.flush();
-    expect(mainComponent.awesomeThings.length).toBe(4);
+  it('should contain a page title of "Products"', function () {
+    expect(mainComponent.pageTitle).toBe('Products');
   });
+
+  describe('onInit', function () {
+    it('should attach to the controller a list of products containing 4 products', function () {
+      mainComponent.$onInit();
+      $httpBackend.flush();
+      expect(mainComponent.products.length).toBe(4);
+    });
+  });
+
 });

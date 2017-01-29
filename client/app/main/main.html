@@ -1,7 +1,17 @@
 <div id="container">
   <div id="content">
-    <div id="product">
-      <img src="http:\/\/target.scene7.com\/is\/image\/Target\/14263758">
+    <div id="page-title">
+      {{$ctrl.pageTitle}}
     </div>
+    <ul class="products" ng-repeat="product in $ctrl.products">
+      <li>
+        <div id="product-image">
+          <img src="{{product.primaryImageUrl}}">
+        </div>
+        <div id="product-title">
+          {{product.title}}
+        </div>
+      </li>
+    </ul>
   </div>
 </div>
