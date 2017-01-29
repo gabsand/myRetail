@@ -5,6 +5,15 @@
 
 'use strict';
 import Thing from '../api/thing/thing.model';
+import Product from '../api/product/product.model';
+
+Product.find({}).remove()
+  .then(() => {
+    Product.create({
+      title: 'Ninja\u2122 Professional Blender with Single Serve Blending Cups',
+      primaryImageUrl: 'http:\/\/target.scene7.com\/is\/image\/Target\/14263758'
+    });
+  });
 
 Thing.find({}).remove()
   .then(() => {
