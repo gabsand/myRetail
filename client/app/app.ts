@@ -16,7 +16,6 @@ import {routeConfig} from './app.config';
 
 
 import navbar from '../components/navbar/navbar.component';
-import footer from '../components/footer/footer.component';
 import main from './main/main.component';
 import constants from './app.constants';
 import util from '../components/util/util.module';
@@ -29,15 +28,11 @@ angular.module('myRetailApp', [
   ngCookies,
   ngResource,
   ngSanitize,
-
-
   ngRoute,
   uiBootstrap,
   navbar,
-  footer,
   main,
   constants,
-
   util
 ])
   .config(routeConfig)
