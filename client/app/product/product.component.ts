@@ -17,7 +17,7 @@ export class ProductController {
   }
 
   $onInit() {
-      this.$http.get('/api/product/' + this.$routeParams.productId).then(response => {
+      this.$http.get('/api/products/' + this.$routeParams.productId).then(response => {
           this.product = response.data;
       }, error => {
           // this.$location.path('/404');

@@ -75,7 +75,7 @@ describe('Product API:', function() {
 
     beforeEach(function(done) {
       request(app)
-        .get(`/api/products/${newProduct._id}`)
+        .get(`/api/products/1840`)
         .expect(200)
         .expect('Content-Type', /json/)
         .end((err, res) => {

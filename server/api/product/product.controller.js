@@ -42,7 +42,7 @@ export function getProducts(req, res) {
 }
 
 export function getProduct(req, res) {
-    return Product.findById(req.params.id).exec()
+    return Product.findOne({itemId: req.params.id}).exec()
         .then(handleEntityNotFound(res))
         .then(respondWithResult(res))
         .catch(handleError(res));
