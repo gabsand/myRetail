@@ -1,12 +1,19 @@
-<div>
-Product Page
-</div>
-<div>
+<div id="outer-container">
+<div id="top-margin"></div>
 <div id="content-column">
-Product Image
+<div id="product-title">{{$ctrl.product.title}}</div>
+<div id="product-image">
+    <img src="{{$ctrl.product.primaryImageUrl}}">
+</div>
 <image-viewer-directive></image-viewer-directive>
 </div>
 <div id="content-column">
-Purchase Info and Buttons
+<div id="price-content">
+    <div id="price-value">{{$ctrl.product.price.displayValue}}</div>
+    <div id="price-qualifier">{{$ctrl.product.price.qualifier}}</div>
+</div>
+<div id="purchase-options">
+    <button href="/{{$ctrl.product.itemId}}/in-store">PICK UP IN STORE</button>
+</div>
 </div>
 </div>
