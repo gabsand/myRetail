@@ -8,15 +8,13 @@ const ngSanitize = require('angular-sanitize');
 const ngRoute = require('angular-route');
 
 const uiBootstrap = require('angular-ui-bootstrap');
-// const ngMessages = require('angular-messages');
-
-
 
 import {routeConfig} from './app.config';
 
 
 import navbar from '../components/navbar/navbar.component';
 import main from './main/main.component';
+import product from './product/product.component';
 import constants from './app.constants';
 import util from '../components/util/util.module';
 
@@ -32,6 +30,7 @@ angular.module('myRetailApp', [
   uiBootstrap,
   navbar,
   main,
+  product,
   constants,
   util
 ])

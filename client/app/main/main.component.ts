@@ -7,7 +7,6 @@ export class MainController {
   pageTitle = 'Products';
   products = [];
 
-  /*@ngInject*/
   constructor($http) {
     this.$http = $http;
   }
