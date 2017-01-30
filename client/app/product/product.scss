@@ -1,0 +1,15 @@
+#content-column {
+  padding-left: 10px ;
+  padding-right: 10px ;
+  float: right;
+  width: 50%;
+  color: red;
+}
+
+@media only screen and (max-width: 629px) {
+    #content-column {
+        float: none;
+        width: 100%;
+        color: blue;
+    }
+}

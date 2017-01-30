@@ -20,7 +20,7 @@ export class ProductController {
       this.$http.get('/api/product/' + this.$routeParams.productId).then(response => {
           this.product = response.data;
       }, error => {
-          this.$location.path('/404');
+          // this.$location.path('/404');
       });
   }
 }
