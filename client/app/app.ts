@@ -12,7 +12,6 @@ const uiBootstrap = require('angular-ui-bootstrap');
 import {routeConfig} from './app.config';
 
 
-import navbar from '../components/navbar/navbar.component';
 import main from './main/main.component';
 import product from './product/product.component';
 import constants from './app.constants';
@@ -28,7 +27,6 @@ angular.module('myRetailApp', [
   ngSanitize,
   ngRoute,
   uiBootstrap,
-  navbar,
   main,
   product,
   constants,
