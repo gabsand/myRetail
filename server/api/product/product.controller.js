@@ -29,6 +29,12 @@ function handleError(res, statusCode) {
     };
 }
 
+export function createProduct(req, res) {
+  return Product.create(req.body)
+    .then(respondWithResult(res, 201))
+    .catch(handleError(res));
+}
+
 export function getProducts(req, res) {
     return Product.find().exec()
         .then(respondWithResult(res))
