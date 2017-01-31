@@ -28,12 +28,14 @@
     width: 95%;
 }
 
-.product-carousel {
+.carousel-container {
     list-style: none;
     margin-top: 20px;
     .image {
         max-height: 50px;
         position: relative;
+        float: left;
+        cursor: pointer;
     }
 }
 

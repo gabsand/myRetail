@@ -7,11 +7,11 @@
         <div class="product-image">
             <img src="{{$ctrl.currentDisplayImage}}">
         </div>
-        <ul rn-carousel rn-carousel-buffered rn-carousel-control class="product-carousel">
-        <li ng-repeat="productImage in $ctrl.productImages">
-            <img class="image" src="{{productImage}}">
-        </li>
-        </ul>
+        <div class="carousel-container">
+            <li ng-repeat="productImage in $ctrl.productImages">
+                <img class="image" src="{{productImage}}" ng-click="$ctrl.setCurrentDisplayImage(productImage)">
+            </li>
+        </div>
     </div>
     <div class="content-column">
     <div class="price">

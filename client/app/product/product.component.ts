@@ -37,6 +37,10 @@ export class ProductController {
     return productImages;
   }
 
+  setCurrentDisplayImage(imageUrl) {
+    this.currentDisplayImage = imageUrl;
+  }
+
   addToCart() {
     this.cartService.AddProductToCart(this.product);
   }
