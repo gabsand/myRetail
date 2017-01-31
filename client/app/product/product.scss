@@ -1,14 +1,14 @@
-#outer-container {
+.content-container {
     width: 95%;
     max-width: 1000px;
     margin: auto;
 }
 
-#top-margin {
+.top-margin {
     height: 50px;
 }
 
-#content-column {
+.content-column {
   padding-left: 10px ;
   padding-right: 10px ;
   float: left;
@@ -28,33 +28,33 @@
     width: 95%;
 }
 
-#price-content {
+.price {
     line-height: 20px;
     vertical-align: bottom;
     margin-bottom: 20px;
+
+    .value {
+        font-weight: 700;
+        font-size: 20px;
+        float: left;
+        vertical-align: bottom;
+    }
+
+    .qualifier {
+        font-size: 10px;
+        float: left;
+        vertical-align: bottom;
+        margin-left: 5px;
+    }
 }
 
-#price-value {
-    font-weight: 700;
-    font-size: 20px;
-    float: left;
-    vertical-align: bottom;
-}
-
-#price-qualifier {
-    font-size: 10px;
-    float: left;
-    vertical-align: bottom;
-    margin-left: 5px;
-}
-
-#purchase-options {
+.purchase-options {
     margin-top: 40px;
     clear: both;
 }
 
 @media only screen and (max-width: 629px) {
-    #content-column {
+    .content-column {
         float: none;
         width: 100%;
     }

@@ -1,19 +1,21 @@
-<div id="outer-container">
-<div id="top-margin"></div>
-<div id="content-column">
-<div id="product-title">{{$ctrl.product.title}}</div>
-<div id="product-image">
-    <img src="{{$ctrl.product.primaryImageUrl}}">
-</div>
-<image-viewer-directive></image-viewer-directive>
-</div>
-<div id="content-column">
-<div id="price-content">
-    <div id="price-value">{{$ctrl.product.price.displayValue}}</div>
-    <div id="price-qualifier">{{$ctrl.product.price.qualifier}}</div>
-</div>
-<div id="purchase-options">
-    <button href="/{{$ctrl.product.itemId}}/in-store">PICK UP IN STORE</button>
-</div>
-</div>
+<div class="top-margin"></div>
+<div class="content-container">
+    <div class="content-column">
+        <div id="product-title">
+            {{$ctrl.product.title}}
+        </div>
+        <div class="product-image">
+            <img src="{{$ctrl.product.primaryImageUrl}}">
+        </div>
+        <image-viewer-directive></image-viewer-directive>
+    </div>
+    <div class="content-column">
+    <div class="price">
+        <div class="value">{{$ctrl.product.price.displayValue}}</div>
+        <div class="qualifier">{{$ctrl.product.price.qualifier}}</div>
+    </div>
+    <div class="purchase-options">
+        <button href="/{{$ctrl.product.itemId}}/in-store" ng-if=$ctrl.product.availableInStore>PICK UP IN STORE</button>
+        <add-to-cart></add-to-cart>
+    </div>
 </div>
