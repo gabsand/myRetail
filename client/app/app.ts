@@ -15,9 +15,8 @@ import {routeConfig} from './app.config';
 import main from './main/main.component';
 import product from './product/product.component';
 import constants from './app.constants';
+import services from './services/cart.service';
 import util from '../components/util/util.module';
-
-
 
 import './app.scss';
 
@@ -30,6 +29,7 @@ angular.module('myRetailApp', [
   main,
   product,
   constants,
+  services,
   util
 ])
   .config(routeConfig)

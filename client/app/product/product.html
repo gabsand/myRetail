@@ -7,7 +7,6 @@
         <div class="product-image">
             <img src="{{$ctrl.product.primaryImageUrl}}">
         </div>
-        <image-viewer-directive></image-viewer-directive>
     </div>
     <div class="content-column">
     <div class="price">
@@ -15,7 +14,7 @@
         <div class="qualifier">{{$ctrl.product.price.qualifier}}</div>
     </div>
     <div class="purchase-options">
-        <button href="/{{$ctrl.product.itemId}}/in-store" ng-if=$ctrl.product.availableInStore>PICK UP IN STORE</button>
-        <add-to-cart></add-to-cart>
+        <button ng-click="$ctrl.findInStore()" ng-if=$ctrl.product.availableInStore>PICK UP IN STORE</button>
+        <button ng-click="$ctrl.addToCart()" ng-if=$ctrl.product.availableOnline>ADD TO CART</button>
     </div>
 </div>

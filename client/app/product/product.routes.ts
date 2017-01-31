@@ -5,5 +5,8 @@ export default function routes($routeProvider) {
   $routeProvider
     .when('/product/:productId', {
       template: '<product></product>'
+    })
+    .when('/product-not-found', {
+      template: '<div> This product could not be found. </div>' 
     });
 };

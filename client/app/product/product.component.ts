@@ -6,22 +6,33 @@ export class ProductController {
   $http;
   $location;
   $routeParams;
+  cartService;
   product;
 
   productController = this;
 
-  constructor($http, $location, $routeParams) {
+  constructor($http, $location, $routeParams, CartService) {
     this.$http = $http;
     this.$location = $location;
     this.$routeParams = $routeParams;
+    this.cartService = CartService;
+    console.log(CartService);
   }
 
   $onInit() {
       this.$http.get('/api/products/' + this.$routeParams.productId).then(response => {
           this.product = response.data;
       }, error => {
-          // this.$location.path('/404');
+          this.$location.path('/product-not-found');
       });
+  }
+
+  addToCart() {
+    this.cartService.AddProductToCart(this.product);
+  }
+
+  findInStore() {
+
   }
 }
 
