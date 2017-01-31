@@ -8,6 +8,8 @@ export class ProductController {
   $routeParams;
   cartService;
   product;
+  productImages;
+  currentDisplayImage;
 
   productController = this;
 
@@ -16,15 +18,23 @@ export class ProductController {
     this.$location = $location;
     this.$routeParams = $routeParams;
     this.cartService = CartService;
-    console.log(CartService);
   }
 
   $onInit() {
       this.$http.get('/api/products/' + this.$routeParams.productId).then(response => {
           this.product = response.data;
+          this.productImages = this.getProductImages(this.product);
+          this.currentDisplayImage = this.product.primaryImageUrl;
       }, error => {
           this.$location.path('/product-not-found');
       });
+  }
+
+  getProductImages(product) {
+    var productImages = [];
+    productImages.push.apply(productImages, product.secondaryImageUrls);
+    productImages.push(product.primaryImageUrl);
+    return productImages;
   }
 
   addToCart() {
@@ -32,7 +42,7 @@ export class ProductController {
   }
 
   findInStore() {
-
+    // stub
   }
 }
 

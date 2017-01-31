@@ -28,6 +28,15 @@
     width: 95%;
 }
 
+.product-carousel {
+    list-style: none;
+    margin-top: 20px;
+    .image {
+        max-height: 50px;
+        position: relative;
+    }
+}
+
 .price {
     line-height: 20px;
     vertical-align: bottom;
@@ -51,6 +60,27 @@
 .purchase-options {
     margin-top: 40px;
     clear: both;
+    text-align: center;
+
+    button {
+        color: white;
+        border-radius: 4px;
+        float: left;
+        width: 45%;
+        overflow: hidden;
+        white-space: nowrap;
+        margin: 2px;
+    }
+
+    #pick-up-in-store {
+        background-color: black;
+        border-color: black;
+    }
+
+    #add-to-cart {
+        background-color: red;
+        border-color: red;
+    }
 }
 
 @media only screen and (max-width: 629px) {

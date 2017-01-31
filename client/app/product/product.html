@@ -5,8 +5,13 @@
             {{$ctrl.product.title}}
         </div>
         <div class="product-image">
-            <img src="{{$ctrl.product.primaryImageUrl}}">
+            <img src="{{$ctrl.currentDisplayImage}}">
         </div>
+        <ul rn-carousel rn-carousel-buffered rn-carousel-control class="product-carousel">
+        <li ng-repeat="productImage in $ctrl.productImages">
+            <img class="image" src="{{productImage}}">
+        </li>
+        </ul>
     </div>
     <div class="content-column">
     <div class="price">
@@ -14,7 +19,7 @@
         <div class="qualifier">{{$ctrl.product.price.qualifier}}</div>
     </div>
     <div class="purchase-options">
-        <button ng-click="$ctrl.findInStore()" ng-if=$ctrl.product.availableInStore>PICK UP IN STORE</button>
-        <button ng-click="$ctrl.addToCart()" ng-if=$ctrl.product.availableOnline>ADD TO CART</button>
+        <button id="pick-up-in-store" ng-click="$ctrl.findInStore()" ng-if=$ctrl.product.availableInStore>PICK UP IN STORE</button>
+        <button id="add-to-cart" ng-click="$ctrl.addToCart()" ng-if=$ctrl.product.availableOnline>ADD TO CART</button>
     </div>
 </div>
