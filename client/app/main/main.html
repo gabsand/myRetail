@@ -1,14 +1,15 @@
-<div id="container">
-  <div id="content">
+<div class="top-margin"></div>
+<div class="content-container">
+  <div class="content">
     <div id="page-title">
       {{$ctrl.pageTitle}}
     </div>
     <ul class="products" ng-repeat="product in $ctrl.products">
       <li>
-        <div id="product-image">
+        <div class="product-image">
           <img src="{{product.primaryImageUrl}}">
         </div>
-        <div id="product-title">
+        <div class="product-title">
           <a ng-href="/product/{{product.itemId}}">{{product.title}}</a>
         </div>
       </li>
